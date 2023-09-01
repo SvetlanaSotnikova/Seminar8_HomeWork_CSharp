@@ -202,7 +202,7 @@ Console.Write("Input a quantity of rows: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input a quantity of colums: ");
 int colums = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a quantity of index of elemet: ");
+Console.Write("Input a quantity of index of elemet: "); // без понятия как это назвать
 int index = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input a minVal: ");
 int minVal = Convert.ToInt32(Console.ReadLine());
