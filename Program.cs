@@ -191,7 +191,7 @@ void GetPositionIndexOfElementsAndWriteArr(int[,,] arr)
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             for (int k = 0; k < arr.GetLength(2); k++)
-                Console.Write($"{arr[i, j, k]}({i},{j},{k})");
+                Console.Write($"{arr[i, j, k]}({i},{j},{k}) ");
         }
         Console.WriteLine();
     }
