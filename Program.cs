@@ -141,17 +141,17 @@ WriteArr(res);
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
-
+/*
 int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
 {
     int[,,] arr = new int[rows, colums, index];
-    int number = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             for (int k = 0; k < arr.GetLength(2); k++)
             {
+                int number = 0;
                 while (true)
                 {
                     number = new Random().Next(minVal, maxVal + 1);
@@ -217,6 +217,7 @@ else
     int[,,] arr = CreateArrRand(rows, colums, index, minVal, maxVal);
     GetPositionIndexOfElementsAndWriteArr(arr);
 }
+*/
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 // Например, на выходе получается вот такой массив:
