@@ -142,8 +142,81 @@ WriteArr(res);
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
+int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
+{
+    int[,,] arr = new int[rows, colums, index];
+    int number = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(2); k++)
+            {
+                while (true)
+                {
+                    number = new Random().Next(minVal, maxVal + 1);
+                    if (Math.Abs(number) > 9 && Math.Abs(number) < 100)
+                    {
+                        if (!ContainsValueArr(arr, number))
+                        {
+                            arr[i, j, k] = number;
+                            break;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+    return arr;
+}
+bool ContainsValueArr(int[,,] arr, int num)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(2); k++)
+            {
+                if (num == arr[i, j, k]) return true;
+            }
+        }
+    }
+    return false;
+}
+void GetPositionIndexOfElementsAndWriteArr(int[,,] arr)
+{
+    Console.WriteLine();
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(2); k++)
+                Console.Write($"{arr[i, j, k]}({i},{j},{k})");
+        }
+        Console.WriteLine();
+    }
+}
 
+Console.Write("Input a quantity of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a quantity of colums: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a quantity of index of elemet: ");
+int index = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a minVal: ");
+int minVal = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a maxVal: ");
+int maxVal = Convert.ToInt32(Console.ReadLine());
 
+if (minVal < -99) minVal = -99;
+if (maxVal > 99) maxVal = 99;
+if ((Math.Abs(minVal) < 10) && (Math.Abs(maxVal) < 10) || (minVal > maxVal))
+    Console.Write("There are no three-digit numbers in this interval !");
+else
+{
+    int[,,] arr = CreateArrRand(rows, colums, index, minVal, maxVal);
+    GetPositionIndexOfElementsAndWriteArr(arr);
+}
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 // Например, на выходе получается вот такой массив:
@@ -151,3 +224,4 @@ WriteArr(res);
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
+
