@@ -152,18 +152,19 @@ int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
             for (int k = 0; k < arr.GetLength(2); k++)
             {
                 int number = 0;
-                while (true)
+                int maxTrying = 10000;
+
+                while (maxTrying > 0) // была проблема бесконечного цикла если матрица больше чем 2х2х2, надеюсь такое ошибок не выдаст
                 {
                     number = new Random().Next(minVal, maxVal + 1);
-                    if (Math.Abs(number) > 9 && Math.Abs(number) < 100)
+                    if (Math.Abs(number) > 9 && Math.Abs(number) < 100 && !ContainsValueArr(arr, number))
                     {
-                        if (!ContainsValueArr(arr, number))
-                        {
-                            arr[i, j, k] = number;
-                            break;
-                        }
+                        arr[i, j, k] = number;
+                        break;
                     }
-                }   
+                    maxTrying--;
+                }
+                if (maxTrying <= 0) arr[i, j, k] = 0;
             }
         }
     }
@@ -191,9 +192,9 @@ void GetPositionIndexOfElementsAndWriteArr(int[,,] arr)
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             for (int k = 0; k < arr.GetLength(2); k++)
-                Console.Write($"{arr[i, j, k]}({i},{j},{k}) ");
+                Console.Write($"{arr[i, j, k]}({i},{k},{j}) "); // рад оформления поставлю k,j, до этого было i,j,k, не знаю как правильно, сделаю как в примере
+            Console.WriteLine();
         }
-        Console.WriteLine();
     }
 }
 
