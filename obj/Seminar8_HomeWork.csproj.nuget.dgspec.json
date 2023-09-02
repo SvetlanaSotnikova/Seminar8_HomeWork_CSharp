@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sotni\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj": {}
+    "C:\\Users\\constantin.cutureanu\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sotni\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj": {
+    "C:\\Users\\constantin.cutureanu\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sotni\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj",
+        "projectUniqueName": "C:\\Users\\constantin.cutureanu\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj",
         "projectName": "Seminar8_HomeWork",
-        "projectPath": "C:\\Users\\sotni\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj",
-        "packagesPath": "C:\\Users\\sotni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sotni\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\obj\\",
+        "projectPath": "C:\\Users\\constantin.cutureanu\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\Seminar8_HomeWork.csproj",
+        "packagesPath": "C:\\Users\\constantin.cutureanu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\constantin.cutureanu\\OneDrive\\Документы\\C#\\Seminar8\\Seminar8_HomeWork\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sotni\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\constantin.cutureanu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

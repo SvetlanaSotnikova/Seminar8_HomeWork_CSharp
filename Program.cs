@@ -192,7 +192,7 @@ void GetPositionIndexOfElementsAndWriteArr(int[,,] arr)
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             for (int k = 0; k < arr.GetLength(2); k++)
-                Console.Write($"{arr[i, j, k]}({i},{k},{j}) "); // рад оформления поставлю k,j, до этого было i,j,k, не знаю как правильно, сделаю как в примере
+                Console.Write($"{arr[i, j, k]}({i},{j},{k}) "); // в примере задания видимо была использованна последовательность i,k,j, но я не знаю насколькоправильно считать от второго индекса а не от последнего, поэтому поставлю по своему
             Console.WriteLine();
         }
     }
