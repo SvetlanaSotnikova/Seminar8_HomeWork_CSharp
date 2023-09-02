@@ -145,6 +145,7 @@ WriteArr(res);
 int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
 {
     int[,,] arr = new int[rows, colums, index];
+    int maxTrying = maxVal-minVal+1;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
@@ -152,7 +153,6 @@ int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
             for (int k = 0; k < arr.GetLength(2); k++)
             {
                 int number = 0;
-                int maxTrying = maxVal-minVal+1;
 
                 while (maxTrying > 0) // была проблема бесконечного цикла если матрица больше чем 2х2х2, надеюсь такое ошибок не выдаст
                 {
