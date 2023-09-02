@@ -152,7 +152,7 @@ int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
             for (int k = 0; k < arr.GetLength(2); k++)
             {
                 int number = 0;
-                int maxTrying = 10000;
+                int maxTrying = maxVal-minVal+1;
 
                 while (maxTrying > 0) // была проблема бесконечного цикла если матрица больше чем 2х2х2, надеюсь такое ошибок не выдаст
                 {
@@ -162,9 +162,9 @@ int[,,] CreateArrRand(int rows, int colums, int index, int minVal, int maxVal)
                         arr[i, j, k] = number;
                         break;
                     }
-                    maxTrying--;
                 }
                 if (maxTrying <= 0) arr[i, j, k] = 0;
+                maxTrying--;
             }
         }
     }
