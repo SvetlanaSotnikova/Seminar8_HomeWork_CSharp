@@ -226,9 +226,7 @@ else
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
-
-using System.Linq.Expressions;
-
+/*
 int[,] CreateArr(int rows, int colums)
 {
     int counter = 0;
@@ -301,3 +299,4 @@ Console.WriteLine();
 Console.Write("Result spiral array:");
 int[,] result = GetSpiralArr(arr);
 WriteArr(result);
+*/
