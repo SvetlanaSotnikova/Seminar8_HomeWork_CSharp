@@ -227,3 +227,77 @@ else
 // 11 16 15 06
 // 10 09 08 07
 
+using System.Linq.Expressions;
+
+int[,] CreateArr(int rows, int colums)
+{
+    int counter = 0;
+    int[,] arr = new int[rows, colums];
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            arr[i, j] = counter + 1;
+            counter++;
+        }
+    }
+    return arr;
+}
+void WriteArr(int[,] arr)
+{
+    Console.WriteLine();
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            string formatArr = arr[i, j].ToString().PadLeft(2, '0');
+            Console.Write($"{formatArr} ");
+        }
+        Console.WriteLine();
+    }
+}
+int[,] GetSpiralArr(int[,] arr) // пришлось просить GPT о помощи, я не понимала как это работает, и сейчас смутно представляется, наверное это опыт
+{
+    int top = 0; // счетчик строк слева на право
+    int left = 0; // счетчик левого столбца 
+    int botton = arr.GetLength(0) - 1; // счетчик нижней строки
+    int right = arr.GetLength(1) - 1; // счетчик правого столбца
+
+    int[,] result = new int[arr.GetLength(0), arr.GetLength(1)];
+
+    int counter = 1;
+    while (left <= right && top <= botton)
+    {
+        for (int i = left; i <= right; i++) // сортировка слева на право
+        {
+            result[top, i] = counter++;
+        }
+        top++; // обрезается верхняя строка, типо готова
+        for (int i = top; i <= botton; i++) // сверху вниз
+        {
+            result[i, right] = counter++;
+        }
+        right--; // обрезается правый столбец
+        for (int i = right; i >= left; i--) // сортировка справа на лево
+        {
+            result[botton, i] = counter++;
+        }
+        botton--; // обрезается нижняя строка
+        for (int i = botton; i >= top; i--) // сортировка снизу в верх
+        {
+            result[i, left] = counter++;
+        }
+        left++; // обрезается левый столбец
+    }
+    return result;
+}
+Console.Write("Input a quantity of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a quantity of colums: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+int[,] arr = CreateArr(rows, colums);
+WriteArr(arr);
+Console.WriteLine();
+Console.Write("Result spiral array:");
+int[,] result = GetSpiralArr(arr);
+WriteArr(result);
