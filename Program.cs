@@ -266,7 +266,7 @@ int[,] GetSpiralArr(int[,] arr) // пришлось просить GPT о пом
     int counter = 1;
     while (left <= right && top <= botton)
     {
-        for (int i = left; i <= right; i++) // сортировка слева на право
+        for (int i = left; i <= right; i++) // движение слева на право
         {
             result[top, i] = counter++;
         }
@@ -276,12 +276,12 @@ int[,] GetSpiralArr(int[,] arr) // пришлось просить GPT о пом
             result[i, right] = counter++;
         }
         right--; // обрезается правый столбец
-        for (int i = right; i >= left; i--) // сортировка справа на лево
+        for (int i = right; i >= left; i--) // движение справа на лево
         {
             result[botton, i] = counter++;
         }
         botton--; // обрезается нижняя строка
-        for (int i = botton; i >= top; i--) // сортировка снизу в верх
+        for (int i = botton; i >= top; i--) // движение снизу в верх
         {
             result[i, left] = counter++;
         }
